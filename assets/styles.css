@@ -62,6 +62,67 @@ body{
 }
 
 .duckies{
-    flex:1 0 20em;
-    border:1px red solid;
+    display: flex;
+    flex-wrap:wrap;
+    flex: 1 0 auto;
+    align-content:flex-start;
+    margin-left:1em;
 }
+
+.duckie{
+    flex: 0 0 20em;
+    position: relative;
+}
+
+.duckie .card{
+    padding-top: 100%;
+    position: relative; 
+    perspective: 50em;
+
+}
+
+
+.duckie .card .front,.duckie .card .back{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-position:center;
+    background-size: cover;
+    transition: all ease 1s;
+}
+
+.duckie .card .front{
+    background-image:url(download.jpg);
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.duckie .card:hover .front{
+    background-image:url(download.jpg);
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+   
+}
+.duckie .card .back{
+    background-image:url(download-1.jpg);
+    transform: rotateY(180deg);
+}
+
+.duckie .card:hover .back{
+    background-image:url(download-1.jpg);
+    transform: rotateY(360deg);
+}
+
+.duckie .name{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+
+
+
